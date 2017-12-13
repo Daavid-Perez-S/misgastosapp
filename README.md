@@ -1,12 +1,23 @@
 # Mis gastos app
 
 
-## Installation via NPM
+## Installation
+
+```bash
+cd name_folder_app
+```
 
 ```bash
 npm install
 ```
 
+```bash
+ionic cordova platform add android or ios
+```
+
+```bash
+ionic cordova run android
+```
 
 ## Usage
 
