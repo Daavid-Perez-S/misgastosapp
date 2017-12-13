@@ -1,0 +1,49 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title class="title-header">Mis cuentas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >  
+  <ion-item *ngIf="lists.length == 0" class="icon-clip" no-lines> 
+    <ion-icon name="md-clipboard"></ion-icon>
+    <br> Empty
+  </ion-item>
+  <ion-card *ngFor="let list of lists;">
+        <ion-card-header>
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-11>
+                <strong class="title-card">
+                  {{list.name}}
+                </strong>
+              </ion-col>
+              <ion-col col-1>
+                <button ion-button clear small color="dark" (click)="showItemOptions(list)">
+                  <ion-icon name="md-more"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>           
+          <div class="date-card">
+            <p>{{ list.date_list | date:'shortDate' }}</p>
+          </div>
+        </ion-card-header>
+        <ion-card-content>     
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-6><strong class="price-card">${{ list.id == id ? totalL : list.total == null ? '00.00' : list.total }}</strong></ion-col>
+              <ion-col col-6 class="status-card" (click)="goToItemList(list)" >
+                <button ion-button clear small>
+                {{ list.status == 0 ? 'In process' : 'Completed' }} &nbsp; <ion-icon name="ios-arrow-forward"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>        
+        </ion-card-content>
+    </ion-card>
+
+    <ion-fab right bottom>
+      <button ion-fab mini (click)="showAddList()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>  

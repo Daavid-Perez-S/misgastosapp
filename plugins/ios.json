@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "miscuentas.io.ionic"
+        }
+    },
+    "dependent_plugins": {}
+}

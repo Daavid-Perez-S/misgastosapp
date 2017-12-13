@@ -1,0 +1,34 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>Mis cuentas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="container">
+
+      <ion-item class="item no-padding">
+        <ion-label stacked>Name:</ion-label>
+        <ion-input placeholder="Name" clearInput name="name" [(ngModel)]="model.name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item class="item no-padding">
+        <ion-label stacked>Description:</ion-label>
+        <ion-input placeholder="Description" clearInput name="description" [(ngModel)]="model.description" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item class="item no-padding">
+        <ion-label stacked>Price:</ion-label>
+        <ion-input placeholder="Price" clearInput name="price" [(ngModel)]="model.price" type="number"></ion-input>
+      </ion-item>
+
+      <br>
+
+      <div class="submit-button" >
+        <button ion-button block (click)="editItemList()" [disabled]="!model.name && !model.description && !model.price" style="text-transform: none;">Edit</button>
+      </div>
+      
+    </div>
+
+</ion-content>

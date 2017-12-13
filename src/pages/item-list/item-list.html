@@ -1,0 +1,48 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="items.length == 0" class="icon-clip" no-lines> 
+    <ion-icon name="md-clipboard"></ion-icon> 
+    <br> Empty
+  </ion-item>
+  <ion-card *ngFor="let item of items">
+      <ion-card-header>
+        <strong class="title-card">
+          {{item.name}}
+        </strong>
+        <br> 
+        <div class="description-card">
+          {{item.description}}
+        </div>
+      </ion-card-header>
+      <ion-card-content>     
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-8></ion-col>
+            <ion-col col-4><strong class="price-card">${{item.price}}</strong></ion-col>
+          </ion-row>
+          <ion-row *ngIf="status == 0">
+            <ion-col col-6 class="icon-card">
+              <button ion-button clear small color="primary" style="text-transform: none;" (click)="editItem(item)">
+                <ion-icon name="create"></ion-icon> &nbsp; Edit
+              </button>
+            </ion-col>
+            <ion-col col-6 class="icon-card">
+              <button ion-button clear small color="primary" style="text-transform: none;" (click)="deleteItem(item)">
+                <ion-icon name="trash"></ion-icon> &nbsp; Delete
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>        
+      </ion-card-content>    
+  </ion-card>
+  
+  <ion-fab right bottom *ngIf="status == 0">
+    <button ion-fab mini (click)="showAddItemList(listId)"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
+
