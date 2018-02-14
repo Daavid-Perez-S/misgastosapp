@@ -4,7 +4,7 @@
 ## Installation
 
 ```bash
-cd name_folder_app
+cd misgastosapp
 ```
 
 ```bash
